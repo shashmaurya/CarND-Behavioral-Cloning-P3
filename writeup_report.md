@@ -25,7 +25,7 @@ The goals / steps of this project are the following:
 [image5]: ./writeup_data/original_image.jpg "Original Image"
 [image6]: ./writeup_data/flipped_image.jpg "Flipped Image"
 [image7]: ./writeup_data/plot_loss.png "Training Loss"
-[video1]: ./test_run_final.mp4 "Final Video"
+[video1]: ./video.mp4 "Final Video"
 
 ## Rubric Points
 ### Here I will consider the [rubric points](https://review.udacity.com/#!/rubrics/432/view) individually and describe how I addressed each point in my implementation.  
@@ -45,6 +45,7 @@ The project submission includes the following files:
 
 Folder test_run_final contains the data saved for the final run
 Folder test_run_iterations contains data for some of the prior runs, both successful and unsuccessful, showing the progressive development of the model.
+Folder writeup_data contains the data for the writeup
 
 
 #### 2. Submission includes functional code
