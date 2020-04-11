@@ -1,0 +1,39 @@
+(/opt/carnd_p3/behavioral) root@fcb3384a2ee3:/home/workspace/CarND-Behavioral-Cloning-P3# python model.py
+Finished reading CSV file
+Skipping Header
+Finished reading Image data
+Data populated. Starting training
+Using TensorFlow backend.
+model.py:101: UserWarning: Update your `Conv2D` call to the Keras 2 API: `Conv2D(6, (5, 5), activation="relu")`
+  model.add(Convolution2D(6,5,5, activation='relu'))
+model.py:103: UserWarning: Update your `Conv2D` call to the Keras 2 API: `Conv2D(6, (5, 5), activation="relu")`
+  model.add(Convolution2D(6,5,5, activation='relu'))
+model.py:110: UserWarning: The `nb_epoch` argument in `fit` has been renamed `epochs`.
+  model.fit(X_train, y_train, validation_split=0.2, shuffle=True, nb_epoch=5)
+Train on 38572 samples, validate on 9644 samples
+Epoch 1/5
+2020-04-10 19:01:28.816552: W tensorflow/core/platform/cpu_feature_guard.cc:45] The TensorFlow library wasn't compiled to use SSE4.1 instructions, but these are available on your machine and could speed up CPU computations.
+2020-04-10 19:01:28.816603: W tensorflow/core/platform/cpu_feature_guard.cc:45] The TensorFlow library wasn't compiled to use SSE4.2 instructions, but these are available on your machine and could speed up CPU computations.
+2020-04-10 19:01:28.816641: W tensorflow/core/platform/cpu_feature_guard.cc:45] The TensorFlow library wasn't compiled to use AVX instructions, but these are available on your machine and could speed up CPU computations.
+2020-04-10 19:01:28.816670: W tensorflow/core/platform/cpu_feature_guard.cc:45] The TensorFlow library wasn't compiled to use AVX2 instructions, but these are available on your machine and could speed up CPU computations.
+2020-04-10 19:01:28.816692: W tensorflow/core/platform/cpu_feature_guard.cc:45] The TensorFlow library wasn't compiled to use FMA instructions, but these are available on your machine and could speed up CPU computations.
+2020-04-10 19:01:28.900597: I tensorflow/stream_executor/cuda/cuda_gpu_executor.cc:893] successful NUMA node read from SysFS had negative value (-1), but there must be at least one NUMA node, so returning NUMA node zero
+2020-04-10 19:01:28.901331: I tensorflow/core/common_runtime/gpu/gpu_device.cc:955] Found device 0 with properties: 
+name: Tesla K80
+major: 3 minor: 7 memoryClockRate (GHz) 0.8235
+pciBusID 0000:00:04.0
+Total memory: 11.17GiB
+Free memory: 11.09GiB
+2020-04-10 19:01:28.901376: I tensorflow/core/common_runtime/gpu/gpu_device.cc:976] DMA: 0 
+2020-04-10 19:01:28.901400: I tensorflow/core/common_runtime/gpu/gpu_device.cc:986] 0:   Y 
+2020-04-10 19:01:28.901419: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1045] Creating TensorFlow device (/gpu:0) -> (device: 0, name: Tesla K80, pci bus id: 0000:00:04.0)
+38572/38572 [==============================] - 50s 1ms/step - loss: 0.0249 - val_loss: 0.0223
+Epoch 2/5
+38572/38572 [==============================] - 48s 1ms/step - loss: 0.0176 - val_loss: 0.0217
+Epoch 3/5
+38572/38572 [==============================] - 49s 1ms/step - loss: 0.0153 - val_loss: 0.0178
+Epoch 4/5
+38572/38572 [==============================] - 48s 1ms/step - loss: 0.0137 - val_loss: 0.0188
+Epoch 5/5
+38572/38572 [==============================] - 48s 1ms/step - loss: 0.0132 - val_loss: 0.0182
+(/opt/carnd_p3/behavioral) root@fcb3384a2ee3:/home/workspace/CarND-Behavioral-Cloning-P3#
