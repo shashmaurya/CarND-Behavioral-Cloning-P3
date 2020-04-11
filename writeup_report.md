@@ -18,13 +18,13 @@ The goals / steps of this project are the following:
 
 [//]: # (Image References)
 
-[image1]: ./writeup_data/Network.jpg "Network"
+[image1]: ./writeup_data/Network.JPG "Network"
 [image2]: ./writeup_data/center_camera.jpg "Center Camera"
 [image3]: ./writeup_data/left_camera.jpg "Left Camera"
 [image4]: ./writeup_data/right_camera.jpg "Right Camera"
 [image5]: ./writeup_data/original_image.jpg "Original Image"
 [image6]: ./writeup_data/flipped_image.jpg "Flipped Image"
-[image7]: ./writeup_data/plot_loss.jpg "Training Loss"
+[image7]: ./writeup_data/plot_loss.png "Training Loss"
 [video1]: ./test_run_final.mp4 "Final Video"
 
 ## Rubric Points
@@ -230,7 +230,7 @@ Below is a more visual representation of the model. Although, some details may n
 This section will be described in two parts. First the creation of dataset and then the training process.
 
 
-##### 3.1 Creation of Training Set
+#### 3.1 Creation of Training Set
 
 After multiple attempts to collect training data by manually running the vehicle on the Udacity simulator, I realized that using the keyboard controls does not result in a good enough driving behavior. The data recorded had vehicle not being in good control most of the times, and thus would not be useful for providing accurate training.
 This led to my decision of using the driving data provided with project resources. Extrapolating the data set could yield more training data. By adding the left and right pictures, and some augmentation I could make the set sufficiently large to train the model. These steps are described in detail below
@@ -262,14 +262,17 @@ measurements.extend([measurement, measurement+corr, measurement-corr])
 An example of the same vehicle position being captured by 3 cameras is given below.
 
 Center Image
+
 ![alt text][image2]
 
 
 Left Image
+
 ![alt text][image3]
 
 
 Right Image
+
 ![alt text][image4]
 
 
@@ -308,17 +311,20 @@ With a 80-20 split, this would mean 38572 images for training and 9644 for valid
 
 
 
-##### 3.2. Training Process
+#### 3.2. Training Process
 
 __Training-Validation Split__
 To prevent overfitting to the training set, a training-validation split of 80-20 was used. This ensures that the model can be evaluated for performance on images it has not seen before.
 
+
 __Shuffle__
 Shuffling the data set also ensures that the sequence of images gets altered each time. This prevents a possibility of the network learning the sequence of images in the training set, and making predictions based on that.
+
 
 __EPOCHS__
 Number of EPOCHS was varied between 3 and 7 for the training. In some cases, increasing the number of EPOCHS was counter-productive as it would start increasing the loss on the validation set. This was possibly due to overfitting on later EPOCHS.
 The final result was achieved on 5 EPOCHS.
+
 
 __Correction factor__
 The correction factor is the estimate of the steering measurement for left and right cameras. This value is also critical in tuning because
@@ -329,6 +335,7 @@ It is define on line 68 of the code
 
 Correction factor was varied between 0.15 to 0.30, in increments of 0.05.
 The final value that yielded best results for this model was 0.25.
+
 
 __Image Crop Size__
 
@@ -370,7 +377,9 @@ The car drives safely through the track with final model created and trained wit
 It ran multiple laps back to back, and does so consistently without going off-track. As stated in requirements, tires stay within the track lines, operating safely throughout conisdering passenger safefty.
 
 The video of the final run (a little over 3 laps) is available below. 
+
 __Video reference__
+
 ![alt text][video1]
 
 
